@@ -1,0 +1,37 @@
+body {
+    background-color:rgb(116, 97, 174);
+    background-image: url(media/grid.jpg);
+    background-size: cover;
+    background-blend-mode:hard-light;
+    background-repeat: repeat;
+    margin: 0px;
+    padding: 10px 10px 10px 10px
+}
+h3 {
+    margin: 0px;
+}
+section {
+    background-color: beige; 
+    width:fit-content; 
+    height:fit-content;
+    padding: 10px 10px 10px 10px;
+    border-color: aliceblue;
+        }
+#current {
+    top:10px;
+    right: 10px;
+}
+#machine {
+    bottom: 10px;
+    right: 10px;
+}
+#copy {
+    right:10px;
+    bottom: 100px;
+}
+.fixed {
+    position:fixed;
+}
+.flow {
+    margin: 10px 10px 10px 10px;
+}

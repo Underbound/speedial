@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>speed dial</title>
-    <style></style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <section>
+    <section class="fixed" id="current">
         <h3>current</h3>
         <ul>
             <li>3rd yr modules</li>
@@ -15,5 +16,48 @@
             <li>learning web dev</li>
         </ul>
     </section>
+
+    <section class="flow">
+        <h3>modules</h3>
+        <ul>
+            <li>topology & groups</li>
+            <li>intro to rep theory</li>
+        </ul>
+    </section>
+
+    <section class="flow">
+        <h3>other section</h3>
+        <p>other text and stuff</p>
+    </section>
+
+    <section class="flow">
+        <h3>memo #1</h3>
+        <input id="key1" type="text">
+        <button id="btn1">key</button>
+        <p id="memo1"></p>
+    </section>
+
+    <section class="flow">
+        <label>memo #2</label>
+        <button id="btn2">paste</button>
+        <p id="memo2"></p>
+    </section>
+
+    <section class="fixed" id="machine">
+        <h3>Local storage</h3>
+        <input id="myinput" type="text">
+        <label>memo</label><br>
+        <input id="mykey" type="text">
+        <label>key</label><br>
+        <button id="mybtn">submit</button>
+    </section>
+
+    <section class="fixed" id="copy">
+        <h3>Copy</h3>
+        <input id="mytext" type="text">
+        <button id="ctrlv">copy</button>
+    </section>
+
+    <script src="index.js"></script>
 </body>
 </html>
