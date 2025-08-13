@@ -7,6 +7,7 @@
 </head>
 
 <body>
+    <main>
     <section class="fixed" id="current">
         <h3>current</h3>
         <ul>
@@ -26,37 +27,25 @@
     </section>
 
     <section class="flow">
-        <h3>other section</h3>
-        <p>other text and stuff</p>
-    </section>
-
-    <section class="flow">
-        <h3>memo #1</h3>
-        <input id="key1" type="text">
-        <button id="btn1">key</button>
+        <label class="memoH">memo #1 ~ </label>
+        <button id="btn1" class="paste"></button>
         <p id="memo1"></p>
     </section>
 
     <section class="flow">
-        <label>memo #2</label>
-        <button id="btn2">paste</button>
+        <label class="memoH">memo #2 ~ </label>
+        <button id="btn2" class="paste"></button>
         <p id="memo2"></p>
     </section>
 
-    <section class="fixed" id="machine">
-        <h3>Local storage</h3>
-        <input id="myinput" type="text">
-        <label>memo</label><br>
-        <input id="mykey" type="text">
-        <label>key</label><br>
-        <button id="mybtn">submit</button>
-    </section>
+  
 
     <section class="fixed" id="copy">
-        <h3>Copy</h3>
+        <h3>enter</h3>
         <input id="mytext" type="text">
-        <button id="ctrlv">copy</button>
     </section>
+</main>
+    <button class="flow" id="plus">+++</button>
 
     <script src="index.js"></script>
 </body>
