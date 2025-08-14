@@ -1,3 +1,13 @@
+
+@font-face {
+    font-family: 'olde_englishregular';
+    src: url('fonts/oldeenglish-webfont.woff') format('woff2'),
+         url('fonts/oldeenglish-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
     background-color:rgb(116, 97, 174);
     background-image: url(media/grid.jpg);
@@ -20,23 +30,30 @@ section {
     border-style:ridge;
     border-width: 2px;
 }
-#plus{
+button[role="control"]{
     background-color: beige;
     border: 2px ridge rgba(255, 255, 255, 0.468);
     color:inherit;
     margin-top: 0;
 }
-#plus:hover{
+button[role="control"]:hover{
     background-color: aliceblue;
 }
-#current {
+#right {
     top:10px;
     right: 10px;
 }
+.side {
+    margin: 10px
+}
+
 
 #copy {
     right:10px;
     bottom: 10px;
+    font-family: "olde_englishregular";
+    font-size:50px;
+    line-height:0.5;
 }
 .fixed {
     position:fixed;
@@ -71,3 +88,4 @@ input[type=text]:focus {
     background-color: aqua;
     resize: vertical;
 }
+

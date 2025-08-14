@@ -1,73 +1,93 @@
 
 
-let mytext = document.getElementById("mytext")
-let btn2 = document.getElementById("btn2")
-let memo2 = document.getElementById("memo2")
-let btn1 = document.getElementById("btn1")
-let memo1 = document.getElementById("memo1")
-let plus = document.getElementById("plus")
+let mytext = document.getElementById("mytext");
+let plus = document.getElementById("plus");
+let minus = document.getElementById("minus");
+let erase = document.getElementById("erase");
+let paste = document.getElementsByClassName("paste");
 let count = 1;
+
 
 //to reset counter:
 //localStorage.setItem("count",0); 
 count = Number(localStorage.getItem("count"));
 
+/*trying to make delete button:
+idea is instead of memos stored individ, store as a list, and memo n displays the nth entry in the list
+press delete on memo k
+the last memo block deletes and the kth entry of the list deletes, so the others all shift up, reload the memo contents 
+side note: have load memo contents as separate function to load memo blocks
+*/
 
-btn1.onclick = function(){
-    localStorage.setItem("memo1", mytext.value);
-    memo1.textContent = localStorage.getItem("memo1");
-    console.log(localStorage.getItem("memo1"));
+//trying to add new memos
+
+newMemo = function(i){
+    console.log(`newMemo #${i}`);
+    let section = document.createElement("section");
+    let label = document.createElement("label");
+    let button = document.createElement("button");
+    let para = document.createElement("p");
+
+    section.setAttribute("class","flow");
+    para.setAttribute("id",`memo${i}`);
+    label.setAttribute("class", "memoH");
+    button.setAttribute("id",`btn${i}`);
+    button.setAttribute(`class`,`paste`);
+
+    document.body.insertBefore(section,plus);
+    label.textContent = `memo#${i} ~ `;
+    section.appendChild(label);
+    section.appendChild(button);
+    section.appendChild(para);
+    
 }
 
-btn2.onclick = function(){
-    localStorage.setItem("memo2", mytext.value);
-    memo2.textContent = localStorage.getItem("memo2");
-    console.log(localStorage.getItem("memo2"));
+function load(){
+let i;
+for(let i = 1; i <= count; ++i) {
+    console.log(`oldMemo #${i}`);
+    let section = document.createElement("section");
+    let label = document.createElement("label");
+    let button = document.createElement("button");
+    let para = document.createElement("p");
+
+    section.setAttribute("class","flow");
+    para.setAttribute("id",`memo${i}`);
+    label.setAttribute("class", "memoH");
+    button.setAttribute("id",`btn${i}`);
+    button.setAttribute("class", "paste");
+    button.setAttribute("onclick",`display(${i})`)
+
+    document.body.insertBefore(section,plus);
+    label.textContent = `memo#${i} ~ `;
+    section.appendChild(label);
+    section.appendChild(button);
+    section.appendChild(para);
+    document.getElementById(`memo${i}`).textContent = localStorage.getItem(`memo${i}`);
 }
+}
+load()
 
 
 plus.onclick = function(){
-    console.log("hello we up run this city yuh")
     count += 1
-    console.log(count)
     localStorage.setItem("count",count)
-    newMemo()
+    newMemo(paste.length + 1)
+    console.log(`new count = ${count}`)
+}
+erase.onclick = function(){
+    console.log("erase")
+    for(let k=1;k<=count;k++) {
+        localStorage.setItem(`memo${k}`,"");
+        document.getElementById(`memo${k}`).textContent = "";
+    }
 }
 
-memo2.textContent = localStorage.getItem("memo2");
-memo1.textContent = localStorage.getItem("memo1");
-
-
-//trying to add new memos
-let label = document.createElement("label");
-let btn = document.createElement("button");
-
-label.setAttribute("class","memoH");
-btn.setAttribute("class", "paste");
-
-
-newMemo = function(){
-    console.log("neha waz here")
-    let para = document.createElement("p");
-    console.log(para);
-    let section = document.createElement("section");
-    section.setAttribute("id",`section${count+2}`);
-    para.setAttribute("id",`memo${count+2}`);
-    console.log(para)
-    let newsection = document.getElementById(`section${count+2}`);
-    let newpara = document.getElementById(`memo${count+2}`);
-    newpara.textContent(`memo${count+2}`);
-    document.body.insertBefore(section,plus);
-    newsection.appendChild(para);
+function display(n){
+    console.log(n)
+    localStorage.setItem(`memo${n}`,mytext.value);
+    document.getElementById(`memo${n}`).textContent = localStorage.getItem(`memo${n}`);
 }
 
-newMemo();
-
-
-//for(let i = 1; i <= count; ++i)
-//    newmemo();
-
-
-
-
-console.log(count)
+console.log(`no of memos is ${paste.length}`)
+console.log(`initial count = ${count}`)
