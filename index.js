@@ -21,14 +21,6 @@ function accessMemo(){
 }
 console.log(memoList);
 
-
-/*trying to make delete button:
-idea is instead of memos stored individ, store as a list, and memo n displays the nth entry in the list
-press delete on memo k
-the last memo block deletes and the kth entry of the list deletes, so the others all shift up, reload the memo contents 
-side note: have load memo contents as separate function to load memo blocks
-*/
-
 //trying to add new memos
 
 function createMemo(i){
