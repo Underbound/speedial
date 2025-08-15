@@ -11,8 +11,6 @@ function reset(){
     storeMemo()
 }
 //reset()
-console.log(accessMemo());
-console.log(memoList);
 if (accessMemo()!=null){
     memoList = accessMemo();
 }
