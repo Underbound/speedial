@@ -11,8 +11,11 @@ function reset(){
     storeMemo()
 }
 //reset()
+console.log(accessMemo());
+if (accessMemo()!=null){
+    memoList = accessMemo();
+}
 
-memoList = accessMemo();
 function storeMemo(){
     localStorage.setItem("memoList",JSON.stringify(memoList));
 }
