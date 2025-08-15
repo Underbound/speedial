@@ -24,7 +24,6 @@ function storeMemo(){
 function accessMemo(){
     return JSON.parse(localStorage.getItem("memoList"));
 }
-console.log(memoList);
 
 //trying to add new memos
 
