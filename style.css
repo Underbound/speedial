@@ -11,9 +11,10 @@
 body {
     background-color:rgb(116, 97, 174);
     background-image: url(media/grid.jpg);
-    background-size: cover;
+    background-size:contain;
     background-blend-mode:hard-light;
     background-repeat: repeat;
+    background-attachment: fixed;
     margin: 0px;
     padding: 10px 10px 10px 10px;
     color:rgb(29, 29, 172);
@@ -23,6 +24,7 @@ h3 {
 }
 section {
     background-color: beige; 
+    background-blend-mode: multiply;
     width:fit-content; 
     height:fit-content;
     padding: 10px 10px 10px 10px;
@@ -38,6 +40,19 @@ button[role="control"]{
 }
 button[role="control"]:hover{
     background-color: aliceblue;
+}
+section .minus {
+    background-color: transparent;
+    border:none;
+    color:cornflowerblue;
+    position: absolute;
+    top:0;
+    left:-2px;
+    font-size: 10px;
+    margin: none;
+}
+.minus:hover {
+    color: coral;
 }
 #right {
     top:10px;
@@ -60,6 +75,7 @@ button[role="control"]:hover{
 }
 .flow {
     margin: 10px 10px 10px 10px;
+    position:relative;
 }
 .paste {
     width:15px;
